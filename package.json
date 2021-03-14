@@ -3,9 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "build": "ng build --prod",
-    "postinstall": "ng build --aot",
-    "start": "node server.js"
+
+    "start": "ng serve"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +30,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.24",
+    "@angular/cli": "^8.3.24",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
     "@types/node": "~8.9.4",
