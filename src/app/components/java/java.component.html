@@ -1,0 +1,8 @@
+<div class="w3-container">
+  <h2>Java Videos</h2>
+  <table class="w3-table w3-bordered">
+    <tr *ngFor="let videosData of javaVideosData; let index = index">
+      <td> <a  target="_blank" href={{videosData.url}}> {{videosData.title}} </a>  </td>
+    </tr>
+  </table>
+</div>
