@@ -18,7 +18,7 @@ export class LinuxComponent implements OnInit {
           this.linuxVideosData = Object.assign(data[i].playListVDatas);
         }
       }
-      console.log(this.linuxVideosData);
+      // console.log(this.linuxVideosData);
     }
   }
 

@@ -18,7 +18,7 @@ export class CssComponent implements OnInit {
           this.cssVideosData = Object.assign(data[i].playListVDatas);
         }
       }
-      console.log(this.cssVideosData);
+      // console.log(this.cssVideosData);
     }
   }
 

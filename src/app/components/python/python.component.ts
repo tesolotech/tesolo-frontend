@@ -18,7 +18,7 @@ export class PythonComponent implements OnInit {
           this.pythonVideosData = Object.assign(data[i].playListVDatas);
         }
       }
-      console.log(this.pythonVideosData);
+      // console.log(this.pythonVideosData);
     }
   }
 

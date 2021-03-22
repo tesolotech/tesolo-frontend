@@ -18,7 +18,7 @@ export class JavascriptComponent implements OnInit {
           this.javascriptVideosData = Object.assign(data[i].playListVDatas);
         }
       }
-      console.log(this.javascriptVideosData);
+      // console.log(this.javascriptVideosData);
     }
   }
 

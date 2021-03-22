@@ -18,7 +18,7 @@ export class HtmlComponent implements OnInit {
           this.htmlVideosData = Object.assign(data[i].playListVDatas);
         }
       }
-      console.log(this.htmlVideosData);
+      // console.log(this.htmlVideosData);
     }
   }
 

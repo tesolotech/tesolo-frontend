@@ -20,7 +20,7 @@ export class AllVideosComponent implements OnInit {
       const data = JSON.parse(localStorage.getItem('videoDetails'));
       this.allVideosData = Object.assign(data);
 
-      console.log(this.allVideosData);
+      // console.log(this.allVideosData);
     }
   }
 

@@ -18,7 +18,7 @@ export class EntertainmentComponent implements OnInit {
           this.mastiVideosData = Object.assign(data[i].playListVDatas);
         }
       }
-      console.log(this.mastiVideosData);
+      // console.log(this.mastiVideosData);
     }
   }
 

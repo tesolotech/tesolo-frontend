@@ -18,7 +18,7 @@ export class HackingComponent implements OnInit {
           this.hackingVideosData = Object.assign(data[i].playListVDatas);
         }
       }
-      console.log(this.hackingVideosData);
+      // console.log(this.hackingVideosData);
     }
   }
 

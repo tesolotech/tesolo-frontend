@@ -18,7 +18,7 @@ export class BootstrapComponent implements OnInit {
           this.boostrapVideosData = Object.assign(data[i].playListVDatas);
         }
       }
-      console.log(this.boostrapVideosData);
+      // console.log(this.boostrapVideosData);
     }
   }
 
