@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { YoutubeService } from '../../service/youtube.service';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-python',
@@ -10,7 +11,8 @@ export class PythonComponent implements OnInit {
   public pythonVideosData = [];
   public playListUrl: string;
   constructor(
-    private youtubeServices: YoutubeService
+    private youtubeServices: YoutubeService,
+    private spinner: NgxSpinnerService
 
   ) { }
 
@@ -25,6 +27,7 @@ export class PythonComponent implements OnInit {
         }
       }
     } else {
+      this.spinner.show();
       this.youtubeServices.getVideosDetails().subscribe((response)=> {
         if (response["statusCode"] == '200' && response["message"] == 'Success') {
           localStorage.setItem('videoDetails', JSON.stringify(response["data"]) );
@@ -38,7 +41,7 @@ export class PythonComponent implements OnInit {
           }
 
         }
-
+        this.spinner.hide();
       });
     }
   }

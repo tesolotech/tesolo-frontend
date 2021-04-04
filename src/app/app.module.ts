@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { NgxSpinnerModule } from "ngx-spinner";
 import { AppComponent } from './app.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { AllVideosComponent } from './components/all-videos/all-videos.component';
@@ -37,7 +39,9 @@ import { EntertainmentComponent } from './components/entertainment/entertainment
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

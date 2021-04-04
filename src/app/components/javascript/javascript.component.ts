@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { YoutubeService } from '../../service/youtube.service';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-javascript',
@@ -9,7 +10,8 @@ import { YoutubeService } from '../../service/youtube.service';
 export class JavascriptComponent implements OnInit {
   public javascriptVideosData = [];
   public playListUrl: string;
-  constructor(private youtubeServices: YoutubeService) { }
+  constructor(private youtubeServices: YoutubeService,
+              private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
     if(localStorage.getItem('videoDetails')) {
@@ -22,6 +24,7 @@ export class JavascriptComponent implements OnInit {
         }
       }
     } else {
+      this.spinner.show();
       this.youtubeServices.getVideosDetails().subscribe((response)=> {
         if (response["statusCode"] == '200' && response["message"] == 'Success') {
           localStorage.setItem('videoDetails', JSON.stringify(response["data"]) );
@@ -35,7 +38,7 @@ export class JavascriptComponent implements OnInit {
           }
 
         }
-
+        this.spinner.hide();
       });
     }
   }
