@@ -1638,7 +1638,7 @@ section {
   box-shadow: 0px 2px 3px #d0d0d0;
 }
 
-.watchlist_btn{
+.watchlist_btn {
   background: #3ac162;
   color: #fff;
   border-radius: 50px;
@@ -1655,4 +1655,15 @@ section {
 .watchlist_btn:hover {
   background: #FF011D;
   color: #fff;
+}
+
+.border_bottom_dashed {
+  border-bottom: 1px dashed #bfbfbf;
+}
+
+.video_headings {
+  font-size: 26px;
+  font-weight: 600;
+  color: #292929;
+  font-family: "Poppins", sans-serif;
 }
