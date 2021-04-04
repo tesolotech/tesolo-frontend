@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { YoutubeService } from '../../service/youtube.service';
 
 @Component({
   selector: 'app-entertainment',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntertainmentComponent implements OnInit {
   public mastiVideosData = [];
-  constructor() { }
+  constructor(private youtubeServices: YoutubeService) { }
 
   ngOnInit() {
     if(localStorage.getItem('videoDetails')){
@@ -18,7 +19,21 @@ export class EntertainmentComponent implements OnInit {
           this.mastiVideosData = Object.assign(data[i].playListVDatas);
         }
       }
-      // console.log(this.mastiVideosData);
+    } else {
+      this.youtubeServices.getVideosDetails().subscribe((response)=> {
+        if (response["statusCode"] == '200' && response["message"] == 'Success') {
+          localStorage.setItem('videoDetails', JSON.stringify(response["data"]) );
+          let data = [];
+          data = JSON.parse(localStorage.getItem('videoDetails'));
+          for(let i = 0; i< data.length; i++) {
+            if (data[i].playListTitle == 'CuTeNess_OvErLod_Of_InDiA') {
+              this.mastiVideosData = Object.assign(data[i].playListVDatas);
+            }
+          }
+
+        }
+
+      });
     }
   }
 

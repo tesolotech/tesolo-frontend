@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
           if (response["statusCode"] == '200' && response["message"] == 'Success') {
             localStorage.setItem('videoDetails', JSON.stringify(response["data"]) );
           }
-          // console.log('youtube response',response);
+
         });
       }
   }

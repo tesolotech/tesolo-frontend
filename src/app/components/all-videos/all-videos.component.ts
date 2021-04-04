@@ -13,14 +13,18 @@ export class AllVideosComponent implements OnInit {
   constructor( private youtubeServices: YoutubeService) { }
 
   ngOnInit() {
-    // this.youtubeServices.getVideosDetails().subscribe((response)=> {
-    //   console.log(response);
-    // });
     if(localStorage.getItem('videoDetails')){
       const data = JSON.parse(localStorage.getItem('videoDetails'));
       this.allVideosData = Object.assign(data);
 
-      // console.log(this.allVideosData);
+    } else {
+      this.youtubeServices.getVideosDetails().subscribe((response)=> {
+        if (response["statusCode"] == '200' && response["message"] == 'Success') {
+          localStorage.setItem('videoDetails', JSON.stringify(response["data"]) );
+          this.allVideosData = Object.assign(response['data']);
+        }
+
+      });
     }
   }
 
