@@ -8,6 +8,7 @@ import { YoutubeService } from '../../service/youtube.service';
 })
 export class HackingComponent implements OnInit {
   public hackingVideosData = [];
+  public playListUrl: string;
   constructor(private youtubeServices: YoutubeService) { }
 
   ngOnInit() {
@@ -16,6 +17,7 @@ export class HackingComponent implements OnInit {
       data = JSON.parse(localStorage.getItem('videoDetails'));
       for(let i = 0; i< data.length; i++) {
         if(data[i].playListTitle == 'Hacking'){
+          this.playListUrl = data[i].playListUrl;
           this.hackingVideosData = Object.assign(data[i].playListVDatas);
         }
       }
@@ -27,6 +29,7 @@ export class HackingComponent implements OnInit {
           data = JSON.parse(localStorage.getItem('videoDetails'));
           for(let i = 0; i< data.length; i++) {
             if (data[i].playListTitle == 'Hacking') {
+              this.playListUrl = data[i].playListUrl;
               this.hackingVideosData = Object.assign(data[i].playListVDatas);
             }
           }

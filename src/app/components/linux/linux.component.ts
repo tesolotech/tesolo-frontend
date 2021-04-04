@@ -8,6 +8,7 @@ import { YoutubeService } from '../../service/youtube.service';
 })
 export class LinuxComponent implements OnInit {
   public linuxVideosData = [];
+  public playListUrl: string;
   constructor(private youtubeServices: YoutubeService) { }
 
   ngOnInit() {
@@ -16,6 +17,7 @@ export class LinuxComponent implements OnInit {
       data = JSON.parse(localStorage.getItem('videoDetails'));
       for(let i = 0; i< data.length; i++) {
         if(data[i].playListTitle == 'Linux Tutorial'){
+          this.playListUrl = data[i].playListUrl;
           this.linuxVideosData = Object.assign(data[i].playListVDatas);
         }
       }
@@ -27,6 +29,7 @@ export class LinuxComponent implements OnInit {
           data = JSON.parse(localStorage.getItem('videoDetails'));
           for(let i = 0; i< data.length; i++) {
             if (data[i].playListTitle == 'Linux Tutorial') {
+              this.playListUrl = data[i].playListUrl;
               this.linuxVideosData = Object.assign(data[i].playListVDatas);
             }
           }

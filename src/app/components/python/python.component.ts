@@ -8,6 +8,7 @@ import { YoutubeService } from '../../service/youtube.service';
 })
 export class PythonComponent implements OnInit {
   public pythonVideosData = [];
+  public playListUrl: string;
   constructor(
     private youtubeServices: YoutubeService
 
@@ -19,6 +20,7 @@ export class PythonComponent implements OnInit {
       data = JSON.parse(localStorage.getItem('videoDetails'));
       for(let i = 0; i< data.length; i++) {
         if(data[i].playListTitle == 'Python3'){
+          this.playListUrl = data[i].playListUrl;
           this.pythonVideosData = Object.assign(data[i].playListVDatas);
         }
       }
@@ -30,6 +32,7 @@ export class PythonComponent implements OnInit {
           data = JSON.parse(localStorage.getItem('videoDetails'));
           for(let i = 0; i< data.length; i++) {
             if (data[i].playListTitle == 'Python3') {
+              this.playListUrl = data[i].playListUrl;
               this.pythonVideosData = Object.assign(data[i].playListVDatas);
             }
           }

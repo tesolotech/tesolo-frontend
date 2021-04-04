@@ -8,6 +8,7 @@ import { YoutubeService } from '../../service/youtube.service';
 })
 export class EntertainmentComponent implements OnInit {
   public mastiVideosData = [];
+  public playListUrl: string;
   constructor(private youtubeServices: YoutubeService) { }
 
   ngOnInit() {
@@ -16,6 +17,7 @@ export class EntertainmentComponent implements OnInit {
       data = JSON.parse(localStorage.getItem('videoDetails'));
       for(let i = 0; i< data.length; i++) {
         if(data[i].playListTitle == 'CuTeNess_OvErLod_Of_InDiA'){
+          this.playListUrl = data[i].playListUrl;
           this.mastiVideosData = Object.assign(data[i].playListVDatas);
         }
       }
@@ -27,6 +29,7 @@ export class EntertainmentComponent implements OnInit {
           data = JSON.parse(localStorage.getItem('videoDetails'));
           for(let i = 0; i< data.length; i++) {
             if (data[i].playListTitle == 'CuTeNess_OvErLod_Of_InDiA') {
+              this.playListUrl = data[i].playListUrl;
               this.mastiVideosData = Object.assign(data[i].playListVDatas);
             }
           }

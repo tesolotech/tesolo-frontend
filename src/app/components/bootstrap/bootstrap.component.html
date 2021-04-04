@@ -15,22 +15,22 @@
 <div class="container py-5">
   <div class="row mb-2">
     <div class="col-sm-3 col-md-2 col-lg-2 ml-auto">
-      <a class="watchlist_btn" href="#" target="_blank"><i class="ri-play-circle-fill mr-1"></i> Open Playlist</a>
+      <a class="watchlist_btn" href={{playListUrl}} target="_blank"><i class="ri-play-circle-fill mr-1"></i> Open Playlist</a>
     </div>
   </div>
   <ul class="list-stle-none pl-0 videoList">
     <li class="mb-3" *ngFor="let videosData of boostrapVideosData; let index = index">
       <div class="d-flex align-items-center flex_wrap">
         <div class="videoThumbnail mr-2">
-          <a class="d-block" target="_blank" href={{videosData.url}}> 
-            <img src="https://via.placeholder.com/100" class="img-fluid">
+          <a class="d-block" target="_blank" href={{videosData.url}}>
+            <img src={{videosData.thumbnailsUrl}} class="img-fluid">
            </a>
         </div>
         <div class="videoDetails">
           <h3> {{videosData.title}} </h3>
           <div class="mt-2">
             <span class="duration d-flex align-items-center flex_nowrap">
-              <i class="ri-time-line mr-1"></i>Duration: 23:00 min
+              <i class="ri-time-line mr-1"></i>Duration: {{videosData.videoDuration}} min
               <a class="play_btn ml-3" href="{{videosData.url}}" target="_blank"><i class="ri-play-circle-fill mr-1"></i> Watch Now</a>
             </span>
           </div>
