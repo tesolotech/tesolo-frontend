@@ -11,6 +11,7 @@ import { CssComponent } from './components/css/css.component';
 import { LinuxComponent } from './components/linux/linux.component';
 import { HackingComponent } from './components/hacking/hacking.component';
 import { EntertainmentComponent } from './components/entertainment/entertainment.component';
+import { CoursesComponent } from './components/courses/courses.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: "Javascript", component: JavascriptComponent },
   { path: "Linux", component: LinuxComponent },
   { path: "Hacking", component: HackingComponent },
-  { path: "Entertainment", component: EntertainmentComponent }
+  { path: "Entertainment", component: EntertainmentComponent },
+  { path: "Courses", component: CoursesComponent }
 ];
 
 @NgModule({

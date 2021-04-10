@@ -18,6 +18,7 @@ import { CssComponent } from './components/css/css.component';
 import { LinuxComponent } from './components/linux/linux.component';
 import { HackingComponent } from './components/hacking/hacking.component';
 import { EntertainmentComponent } from './components/entertainment/entertainment.component';
+import { CoursesComponent } from './components/courses/courses.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { EntertainmentComponent } from './components/entertainment/entertainment
     CssComponent,
     LinuxComponent,
     HackingComponent,
-    EntertainmentComponent
+    EntertainmentComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
