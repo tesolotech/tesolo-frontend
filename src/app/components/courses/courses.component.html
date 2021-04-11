@@ -1,1 +1,53 @@
-<p>courses works!</p>
+<div class="breadcrumbs">
+  <div class="container">
+    <h2>Courses</h2>
+    <p>Learn from scartch to advance level.</p>
+  </div>
+</div>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Courses</li>
+  </ol>
+</nav>
+
+<section id="popular-courses" class="courses">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Courses</h2>
+      <p>All Courses</p>
+    </div>
+
+    <div class="row" data-aos="zoom-in" data-aos-delay="100">
+
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch" *ngFor="let course of courseDataSets; let index = index">
+        <div class="course-item">
+          <img src={{course.imageUrl}} class="img-fluid" alt="...">
+          <div class="course-content">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4>{{course.title}}</h4>
+            </div>
+
+            <h3><a href={{course.redirectUrl}} [routerLink]="[course.redirectUrl]">Leran {{course.title}}</a></h3>
+            <!-- <p>Angular is an application design framework and development platform for creating efficient and sophisticated single-page apps, building mobile and desktop web applications.</p> -->
+            <div class="trainer d-flex justify-content-between align-items-center">
+              <div class="trainer-profile d-flex align-items-center">
+                <img src={{course.authorImgUrl}} class="img-fluid" alt="">
+                <span>{{course.authorName}}</span>
+              </div>
+              <div class="trainer-rank d-flex align-items-center">
+                <i class="bx bx-user"></i>&nbsp;{{course.userSubscribeCount}}
+                &nbsp;&nbsp;
+                <i class="bx bx-heart"></i>&nbsp;{{course.userLikeCount}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End Course Item-->
+
+    </div>
+
+  </div>
+</section><!-- End Popular Courses Section -->
